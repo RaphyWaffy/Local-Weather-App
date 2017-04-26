@@ -2,9 +2,9 @@
 /*global $, jQuery, alert*/
 $(document).ready(function () {
     'use strict';
-    var openweath = "https//api.openweathermap.org/data/2.5/weather?lat=51.46&lon=-2.6&appid=cd5d1b218b56cc19fd423497c76cdc4b";
+    var openweath = "https://api.openweathermap.org/data/2.5/weather?lat=51.46&lon=-2.6&appid=cd5d1b218b56cc19fd423497c76cdc4b";
     $.getJSON(openweath, function (weath) {
-        var icon = "https//openweathermap.org/img/w/" + weath.weather[0].icon + ".png";
+        var icon = "https://openweathermap.org/img/w/" + weath.weather[0].icon + ".png";
         $("#city").text(weath.name);
         $("#description").text(weath.weather[0].description);
         $("#wind").text(weath.wind.speed);
@@ -31,7 +31,7 @@ $(document).ready(function () {
             break;
         }
     });
-/* Buttons changing the temperture measurements*/
+/* Buttons channing the temperture mesurements*/
     $("#btn1").click(function () {
         $.getJSON(openweath + "&units=imperial", function (fahrenheit) {
             $("#temperture1").text(fahrenheit.main.temp);
