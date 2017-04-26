@@ -1,0 +1,53 @@
+* {
+font-family: 'Orbitron', sans-serif;
+}
+/* Background colors */
+.clear {
+  background-color: lightblue;
+}
+.clearnight {
+  background-color: darkblue;
+}
+.raining{
+  background-color: royalblue;
+}
+.lightning {
+  background-color: purple;
+}
+.foggy {
+  background-color: grey;
+}
+
+/* Main */
+h1 {
+  text-align: center;
+  font-size: 80px;
+  font-weight: bold;
+  color: white;
+}
+.headers{
+  text-align: center;
+  margin-top: 30px;
+}
+#city {
+  font-size: 40px;
+  text-align: center;
+}
+
+.flex-contatiner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+
+.dm, .tm, .wm {
+  width: 200px;
+     height: 200px;
+     background: white;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50px;
+     border-radius: 50%;
+     margin: 30px
+}
