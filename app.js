@@ -2,52 +2,26 @@
 /*global $, jQuery, alert*/
 $(document).ready(function () {
     'use strict';
-    var openweath = "https://crossorigin.me/https://google.com/https://api.openweathermap.org/data/2.5/weather?lat=51.46&lon=-2.6&appid=cd5d1b218b56cc19fd423497c76cdc4b";
+    var openweath = "https://api.apixu.com/v1/current.json?key=3a7cb5154ea145f5ad1164925172604&q=Bristol";
     $.getJSON(openweath, function (weath) {
-        var icon = "https://crossorigin.me/https://google.com/https://openweathermap.org/img/w/" + weath.weather[0].icon + ".png";
-        $("#city").text(weath.name);
-        $("#description").text(weath.weather[0].description);
-        $("#wind").text(weath.wind.speed);
-        $("#temperture1").text(weath.main.temp);
+        var icon = "https:" + weath.current.condition.icon;
+        $("#city").text(weath.location.name);
+        $("#description").text(weath.current.condition.text);
+        $("#wind").text(weath.current.wind_mph);
+        $("#temperture1").text(weath.current.temp_c + "ºC");
         $("#temperture2").html("<img src=" + icon + ">");
 
-
-/* Switch statements for changing background colors*/
-        switch (weath.weather[0].icon) {
-        case "01d": case "02d": case "03d": case "04d":
-            $("#body").addClass("clear");
-            break;
-        case "01n": case "02n": case "03n": case "04n":
-                $("#body").addClass("clearnight");
-                break;
-        case "09d": case "09n": case "10d": case "10n": case "13d": case "13n":
-            $("#body").addClass("raining");
-          break;
-        case "11d": case "11n":
-            $("#body").addClass("lightning");
-          break;
-        case "50d": case "50n":
-              $("#body").addClass("foggy");
-            break;
-        }
-    });
 /* Buttons channing the temperture mesurements*/
-    $("#btn1").click(function () {
-        $.getJSON(openweath + "&units=imperial", function (fahrenheit) {
-            $("#temperture1").text(fahrenheit.main.temp);
+        $("#btn1").click(function () {
+            $("#temperture1").text(weath.current.temp_c + "ºC");
         });
-    });
 
-    $("#btn2").click(function () {
-        $.getJSON(openweath + "&units=metric", function (weath) {
-            $("#temperture1").text(weath.main.temp);
-        });
-    });
 
-    $("#btn3").click(function () {
-        $.getJSON(openweath, function (kelvin) {
-            $("#temperture1").text(kelvin.main.temp);
+        $("#btn2").click(function () {
+            $("#temperture1").text(weath.current.temp_f + "ºF");
         });
+
+
     });
 
 });

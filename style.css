@@ -2,20 +2,8 @@
 font-family: 'Orbitron', sans-serif;
 }
 /* Background colors */
-.clear {
+body {
   background-color: lightblue;
-}
-.clearnight {
-  background-color: darkblue;
-}
-.raining{
-  background-color: royalblue;
-}
-.lightning {
-  background-color: purple;
-}
-.foggy {
-  background-color: grey;
 }
 
 /* Main */
